@@ -59,8 +59,18 @@ p{
 }
 
 .containerSections{
-    margin-left: 210px;
-    width: calc(100vw - 210px);
+    margin-left: 240px;
+    width: calc(100vw - 240px);
+}
+
+.submenu{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    a{
+        padding-left: 20px;
+    }
 }
 
 @media (max-width: 1100px) {

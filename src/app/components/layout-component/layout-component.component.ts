@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class LayoutComponentComponent implements OnInit {
 
   open = false;
+  openReports = false;
 
   constructor() { }
 
@@ -18,5 +19,9 @@ export class LayoutComponentComponent implements OnInit {
 
   openMenu(){
     this.open = !this.open;
+  }
+
+  opensubmenu(){
+    this.openReports = !this.openReports;
   }
 }

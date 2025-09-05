@@ -8,6 +8,19 @@
     <a href="/">Inicio</a>
     <a href="introducción">Introducción</a>
     <a href="problematica">Problematica</a>
-    <a href="reporte">Reporte por departamentos</a>
+
+    <a class="d-flex justify-content-between" style="cursor: pointer;" (click)="opensubmenu()">
+      <p>Reportes</p>
+      <i class="bi bi-caret-up-fill arrow" [ngClass]="openReports ? '' : 'rotate'"></i>
+    </a>
+    @if (openReports) {
+      <div class="submenu" *ngIf="openReports">
+        <a class="submenuOption" href="">Reporte de radiación solar</a>
+        <a class="submenuOption" href="">Reporte de porcentaje de radiación solar</a>
+        <a class="submenuOption" href="">Reporte historico y predicción de radiación solar</a>
+      </div>
+    }
+    
+    <a href="">Simulador de producción solar</a>
     <a href="equipo">Equipo de desarrollo</a>
 </div>

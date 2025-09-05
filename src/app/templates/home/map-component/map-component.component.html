@@ -14,12 +14,20 @@
 
     <div class="">
       <span class="textSelected">Lugar seleccionado:</span>
-      <p class="citySelected fontInter textOrange" >Rioacha</p>
+      <p class="citySelected fontInter" [ngClass]="{
+        'textRed': type === 1,
+        'textgreen': type === 2,
+        'textOrange': type === 3
+        }">{{ name }}</p>
     </div>
 
-    <p class=" textBold fontInter">✅ Rentable para paneles solares</p>
+    <p class=" textBold fontInter">{{message}}</p>
 
-    <p class="citySelected fontInter textOrange">Radiación promedio: Alta (88%)</p>
+    <p class="citySelected fontInter" [ngClass]="{
+        'textRed': type === 1,
+        'textgreen': type === 2,
+        'textOrange': type === 3
+        }">Radiación Anual: {{kwm2}} kwh/m2 _ dia</p>
   </div>
 
 </div>
