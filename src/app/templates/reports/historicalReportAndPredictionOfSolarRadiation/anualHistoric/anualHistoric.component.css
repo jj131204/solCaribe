@@ -3,7 +3,7 @@
     color: #FFFFFF;
 }
 
-.selectOptions{
+.selectFilter {
     width: 300px;
     padding: 10px 30px;
     background-color: #F7F7F7;
@@ -13,4 +13,8 @@
 .containergaphic{
     width: 100%;
     height: 400px;
+}
+
+.submitButton{
+    cursor: pointer;
 }

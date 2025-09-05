@@ -5,6 +5,7 @@ import { ProblematicComponent } from './templates/problematic/problematic.compon
 import { TeamComponent } from './templates/team/team.component';
 import { SolarRadiationReportComponent } from './templates/reports/solarRadiationReport/solarRadiationReport.component';
 import { HistoricalReportAndPredictionOfSolarRadiationComponent } from './templates/reports/historicalReportAndPredictionOfSolarRadiation/historicalReportAndPredictionOfSolarRadiation.component';
+import { SimuladorComponent } from './templates/simulador/simulador.component';
 
 export const routes: Routes = [
     {
@@ -26,4 +27,8 @@ export const routes: Routes = [
         path: 'equipo', component : TeamComponent
     },
     
+    {
+        path: 'simulador', component : SimuladorComponent
+    },
+
 ];

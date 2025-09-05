@@ -13,16 +13,25 @@ Chart.register(...registerables);
   imports: [BaseChartDirective]
 })
 export class AnualHistoricComponent {
+  allData = [10, 20, 15, 30, 25, 28, 30, 50];
+  labels = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'];
+  cutIndex = 4; // a partir de Mayo son estimados
 
-public lineChartData: ChartData<'line'> = {
-    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
-    datasets: [{
-      label: 'Ventas mensuales',
-      data: [65, 59, 80, 81, 56, 55],
-      fill: false,
-      borderColor: 'rgb(75, 192, 192)',
-      tension: 0.1
-    }]
+  public lineChartData: ChartData<'line'> = {
+    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'julio'],
+    datasets: [
+      {
+        type: 'line',
+        label: 'Radiación solar',
+        data: this.allData,
+        borderColor: 'blue',
+        tension: 0.3,
+        segment: {
+          borderColor: ctx => ctx.p0.parsed.x < this.cutIndex ? 'blue' : 'orange',
+          borderDash: ctx => ctx.p0.parsed.x < this.cutIndex ? [] : [5, 5],
+        }
+      }
+    ],
   };
 
   public lineChartOptions: ChartConfiguration['options'] = {
