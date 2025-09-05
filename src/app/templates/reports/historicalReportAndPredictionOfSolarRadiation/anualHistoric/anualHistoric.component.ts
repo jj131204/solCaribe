@@ -1,26 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
 import { Chart, registerables } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { ApiService } from '../../../../services/api.service';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 Chart.register(...registerables);
+
 
 @Component({
   selector: 'app-anualHistoric',
   templateUrl: './anualHistoric.component.html',
   styleUrls: ['./anualHistoric.component.css'],
-  imports: [BaseChartDirective, CommonModule]
+  imports: [BaseChartDirective, CommonModule, FormsModule]
 })
 export class AnualHistoricComponent  implements OnInit{
+
+  @ViewChild('chart') chart?: BaseChartDirective;
   departments: any;
   selectedDepartment: String = "";
-
+  selectedMunicipality: String = "Seleccionar municipio";
   municipalities: any;
+  selectedYear: String = "2023";
 
+  ranges: any;
+
+  labels: string[] = [];
+  allData: number[] = [];
   constructor(private apiService: ApiService, private http: HttpClient){}
 
   ngOnInit(): void {
@@ -40,15 +49,53 @@ export class AnualHistoricComponent  implements OnInit{
       });
   }
 
+  getMunicipality(): void {
+    this.apiService.getApi(`municipios/${this.selectedDepartment}`)
+      .subscribe({
+        next: (res: any) => {
+          console.log('Respuesta:', res.municipios);
+          this.municipalities = res.municipios;
+        },
+        error: (err) => {
+          console.error('Error al consultar API:', err);
+        }
+      });
+  }
 
+  getRange(){
+    this.apiService.getApi(`municipalities/${this.selectedMunicipality}/range?start_month=enero&end_month=diciembre&year=${this.selectedYear}`)
+    .subscribe({
+      next: (res: any) => {
+        console.log('Respuesta:', res.values);
+        this.ranges = res.values;
+        this.labels = this.ranges.map((d: { month: any; }) => d.month);
+        this.allData = this.ranges.map((d: { value_kwh: any; }) => d.value_kwh);
+        
+        this.lineChartData = {
+          labels: this.labels,
+          datasets: [
+            {
+              type: 'line',
+              label: 'Radiación solar en kwh/m2 * dia',
+              data: this.allData,
+              borderColor: 'blue',
+              tension: 0.3,
+            }
+          ]
+        };
 
+        // Fuerza la actualización del chart
+        this.chart?.update();
+      },
+      error: (err) => {
+        console.error('Error al consultar API:', err);
+      }
+    });
+  }
 
-  allData = [10, 20, 15, 30, 25, 28, 30, 50];
-  labels = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'];
-  cutIndex = 4; // a partir de Mayo son estimados
 
   public lineChartData: ChartData<'line'> = {
-    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'julio'],
+    labels: this.labels,
     datasets: [
       {
         type: 'line',
@@ -56,10 +103,6 @@ export class AnualHistoricComponent  implements OnInit{
         data: this.allData,
         borderColor: 'blue',
         tension: 0.3,
-        segment: {
-          borderColor: ctx => ctx.p0.parsed.x < this.cutIndex ? 'blue' : 'orange',
-          borderDash: ctx => ctx.p0.parsed.x < this.cutIndex ? [] : [5, 5],
-        }
       }
     ],
   };
@@ -81,9 +124,9 @@ export class AnualHistoricComponent  implements OnInit{
       },
       y: {
         min: 0,
-        max: 100,
+        max: 10,
         ticks: {
-          stepSize: 20
+          stepSize: 1
         }
       }
     }

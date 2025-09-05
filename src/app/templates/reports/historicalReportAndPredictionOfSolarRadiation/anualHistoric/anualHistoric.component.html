@@ -1,23 +1,14 @@
   
 <div class="containerSelectsOption d-flex gap-4 mt-4 flex-wrap">
-  <select name="year" id="" class="selectFilter widthYear generalShadow borderRadius">
-    <option disabled selected >Seleccionar el año</option>
-    <option selected value="2023">2023</option>
-    <option value="2022">2022</option>
-    <option value="2021">2021</option>
-    <option value="2020">2020</option>
-    <option value="2019">2019</option>
-  </select>
-  <select name="department" id="" class="selectFilter generalShadow borderRadius">
+  <select name="department" id="" class="selectFilter generalShadow borderRadius" (change)="getMunicipality()" [(ngModel)]="selectedDepartment">
       <option disabled selected value="">Selección un departamento</option>
       <option *ngFor="let department of departments" [value]="department">{{ department }}</option>
   </select>
-  <select name="municipility" id="" class="selectFilter generalShadow borderRadius">
+  <select name="municipility" id="" class="selectFilter generalShadow borderRadius" [(ngModel)]="selectedMunicipality">
     <option disabled selected >Seleccionar municipio</option>
-    <option value="1">Barranquilla</option>
-    <option value="1">Soledad</option>
+    <option *ngFor="let municipality of municipalities" [value]="municipality">{{ municipality }}</option>
   </select>
-  <div class="submitButton generalShadow borderRadius p-2">Buscar.</div>
+  <div class="submitButton generalShadow borderRadius p-2" (click)="getRange()">Buscar.</div>
 </div>
 <br><br>  
 

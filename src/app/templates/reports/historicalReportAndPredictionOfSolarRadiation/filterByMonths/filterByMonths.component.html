@@ -1,40 +1,43 @@
   
 <div class="containerSelectsOption d-flex mt-4 flex-wrap align-items-center">
   <div class="contentSelects d-flex gap-4">
-      <select name="department" id="" class="selectFilter generalShadow borderRadius">
-      <option disabled selected >Seleccionar departamento</option>
-      <option value="1">Atlantico</option>
-      <option value="1">Atlantico</option>
-      <option value="1">Atlantico</option>
-      <option value="1">Atlantico</option>
+    <select name="department" id="" class="selectFilter generalShadow borderRadius" (change)="getMunicipality()" [(ngModel)]="selectedDepartment">
+      <option disabled selected value="">Selección un departamento</option>
+      <option *ngFor="let department of departments" [value]="department">{{ department }}</option>
     </select>
-    <select name="municipility" id="" class="selectFilter generalShadow borderRadius">
+    <select name="municipility" id="" class="selectFilter generalShadow borderRadius" [(ngModel)]="selectedMunicipality">
       <option disabled selected >Seleccionar municipio</option>
-      <option value="1">Barranquilla</option>
-      <option value="1">Soledad</option>
+      <option *ngFor="let municipality of municipalities" [value]="municipality">{{ municipality }}</option>
     </select>
-    <select name="department" id="" class="selectFilter generalShadow borderRadius">
-      <option disabled selected >Mes Inicio...</option>
-      <option value="1">Atlantico</option>
-      <option value="1">Atlantico</option>
-      <option value="1">Atlantico</option>
-      <option value="1">Atlantico</option>
+
+    <select [(ngModel)]="startMonth" class="selectFilter generalShadow borderRadius" (change)="validateMonths()">
+      <option *ngFor="let month of months" [value]="month">{{ month }}</option>
     </select>
-    <select name="municipility" id="" class="selectFilter generalShadow borderRadius">
-      <option disabled selected >Mes Final...</option>
-      <option value="1">Barranquilla</option>
-      <option value="1">Soledad</option>
+
+    <select [(ngModel)]="endMonth" class="selectFilter generalShadow borderRadius" (change)="validateMonths()">
+      <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+    </select>
+
+    <p class="errorMessage">{{errorMessage}}</p>
+
+    <select name="year" class="selectFilter widthYear generalShadow borderRadius"  [(ngModel)]="selectedYear">
+      <option disabled selected >Seleccionar el año</option>
+      <option selected value="2023">2023</option>
+      <option value="2022">2022</option>
+      <option value="2021">2021</option>
+      <option value="2020">2020</option>
+      <option value="2019">2019</option>
     </select>
   </div>
-  <div class="submitButton generalShadow borderRadius p-2">Buscar.</div>
+  <div class="submitButton generalShadow borderRadius p-2" (click)="getRange()">Buscar.</div>
 </div>
 <br><br>  
 
 <div class="relative w-full containergaphic">
-  <!-- <canvas 
+  <canvas 
     baseChart 
     [data]="lineChartData" 
     [options]="lineChartOptions" 
     [type]="lineChartType">
-  </canvas> -->
+  </canvas>
 </div>

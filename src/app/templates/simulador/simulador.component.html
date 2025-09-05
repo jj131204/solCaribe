@@ -18,7 +18,46 @@
             <p>Latitud: {{selectedLat}}</p>
             <p>Longitud: {{selectedLng}}</p>
         </div>
-        <input type="text" class="generalShadow borderRadius  selectFilter" name="cuantity" placeholder="¿Cuanta energia desea producir en kWh / día?" id="">
-        <div class="submitButton generalShadow borderRadius">Buscar</div>
+        <input type="text" class="generalShadow borderRadius  selectFilter" name="cuantity" placeholder="¿Cuanta energia desea producir en kWh / día?" id="" [(ngModel)]="energia">
+        <div class="submitButton generalShadow borderRadius" (click)="sendTables()">Buscar</div>
+    </div>
+
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>N° de paneles</th>
+                    <th>Eficiencia</th>
+                    <th>kwh/m2 * dia</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (ok == false) {
+                    <tr>
+                        <td></td>
+                        <td><br></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                }
+                 @if (ok == true) {
+                    <tr *ngFor="let d of data">
+                        <td>{{d.cantidad_paneles}}</td>
+                        <td>{{d.eficiencia}}%</td>
+                        <td>{{d.eficiencia}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </section>

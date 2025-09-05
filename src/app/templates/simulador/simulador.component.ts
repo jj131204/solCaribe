@@ -3,16 +3,20 @@ import { LayoutComponentComponent } from '../../components/layout-component/layo
 import { ApiService } from '../../services/api.service';
 import { HttpClient } from '@angular/common/http';
 import * as L from 'leaflet';
+import { FormsModule } from "@angular/forms";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-simulador',
   templateUrl: './simulador.component.html',
   styleUrls: ['./simulador.component.css'],
-  imports: [LayoutComponentComponent]
+  imports: [CommonModule, LayoutComponentComponent, FormsModule]
 })
 export class SimuladorComponent implements OnInit {
   private map: any;
-  private data: any;
+  data: any;
+  energia = "";
+  ok = false;
   selectedLat: number | null = null;
   selectedLng: number | null = null;
    marker!: L.Marker; 
@@ -66,5 +70,21 @@ export class SimuladorComponent implements OnInit {
     });
   }
 
+  sendTables(){
+    if(this.selectedLat != null && this.selectedLng != null && this.energia != ""){
+       
+          this.apiService.getApi(`panels?lat=${this.selectedLat}&lon=${this.selectedLng}&energia_deseada=${this.energia}`)
+            .subscribe({
+              next: (res: any) => {
+                console.log('Respuesta:', res);
+                this.data = res.opciones;
+                this.ok = true;
+              },
+              error: (err) => {
+                console.error('Error al consultar API:', err);
+              }
+            });
+    }
+  }
 
 }

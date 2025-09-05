@@ -119,10 +119,10 @@ export class MapComponentComponent implements OnInit {
   }
 
   setMessageType(kwhm2: number) {
-    if (kwhm2 <= 1) {
+    if (kwhm2 <= 3) {
       this.message = '❌ No rentable para paneles solares';
       this.type = 1;
-    } else if (kwhm2 < 1.5) {
+    } else if (kwhm2 < 5) {
       this.message = '⚠️ Rentabilidad moderada para paneles solares';
       this.type = 2;
     } else {
@@ -132,8 +132,8 @@ export class MapComponentComponent implements OnInit {
   }
 
   getColor(valor_anual_kwh: number): string {
-    if (valor_anual_kwh <= 1) return '#F74F52'; 
-    if (valor_anual_kwh < 1.5) return '#9CCC65';
+    if (valor_anual_kwh <= 3) return '#F74F52'; 
+    if (valor_anual_kwh < 5) return '#9CCC65';
     return '#F39200';
   }
 
