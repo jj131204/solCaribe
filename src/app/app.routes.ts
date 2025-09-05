@@ -4,6 +4,7 @@ import { IntroductionComponent } from './templates/introduction/introduction.com
 import { ProblematicComponent } from './templates/problematic/problematic.component';
 import { TeamComponent } from './templates/team/team.component';
 import { SolarRadiationReportComponent } from './templates/reports/solarRadiationReport/solarRadiationReport.component';
+import { HistoricalReportAndPredictionOfSolarRadiationComponent } from './templates/reports/historicalReportAndPredictionOfSolarRadiation/historicalReportAndPredictionOfSolarRadiation.component';
 
 export const routes: Routes = [
     {
@@ -17,6 +18,9 @@ export const routes: Routes = [
     },
     {
         path: 'reporteDepartamento', component : SolarRadiationReportComponent
+    },
+    {
+        path: 'reporteHistorico', component : HistoricalReportAndPredictionOfSolarRadiationComponent
     },
     {
         path: 'equipo', component : TeamComponent

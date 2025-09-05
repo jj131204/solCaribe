@@ -1,0 +1,26 @@
+  
+<div class="containerSelectsOption d-flex gap-4 mt-4">
+  <select name="department" id="" class="selectFilter generalShadow borderRadius">
+    <option disabled selected >Seleccionar departamento</option>
+    <option value="1">Atlantico</option>
+    <option value="1">Atlantico</option>
+    <option value="1">Atlantico</option>
+    <option value="1">Atlantico</option>
+  </select>
+  <select name="municipility" id="" class="selectFilter generalShadow borderRadius">
+    <option disabled selected >Seleccionar municipio</option>
+    <option value="1">Barranquilla</option>
+    <option value="1">Soledad</option>
+  </select>
+  <div class="submitButton generalShadow borderRadius">Buscar.</div>
+</div>
+<br><br>  
+
+<div class="relative w-full containergaphic">
+  <canvas 
+    baseChart 
+    [data]="lineChartData" 
+    [options]="lineChartOptions" 
+    [type]="lineChartType">
+  </canvas>
+</div>

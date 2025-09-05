@@ -1,0 +1,26 @@
+.buttonReports{
+    cursor: pointer;
+    padding: 15px 25px;
+    width: 30%;
+}
+
+.reportSelected{
+    background-color: #1D2A39;
+    color: #FFFFFF;
+}
+
+.selectOptions{
+    width: 300px;
+    padding: 10px 30px;
+    background-color: #F7F7F7;
+    border: none;
+}
+
+.submitButton{
+    padding: 10px 30px;
+    background-color: #F7F7F7;
+    border: none;
+    width: max-content;
+    cursor: pointer;
+}
+

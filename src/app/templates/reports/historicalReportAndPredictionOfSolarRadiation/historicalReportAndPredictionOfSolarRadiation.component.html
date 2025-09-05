@@ -1,0 +1,23 @@
+<app-layout-component></app-layout-component>
+<section class="containerSections">
+  <h1 class="title">REPORTE HISTORICO Y PREDICCIÓN DE RADIACIÓN SOLAR <br>(Historico y predicciones)</h1>
+  
+  <div class="containerbuttons d-flex gap-3 flex-wrap justify-content-between">
+    <div class="buttonReports text-center borderRadius generalShadow" [ngClass]="graphicSelected == 1 ? 'reportSelected' : '' " (click)="selectedGraphic(1)">HISTORICO ANUAL</div>
+    <div class="buttonReports text-center borderRadius generalShadow" [ngClass]="graphicSelected == 2 ? 'reportSelected' : '' " (click)="selectedGraphic(2)">HISTORICO FILTRADO POR MES</div>
+    <div class="buttonReports text-center borderRadius generalShadow" [ngClass]="graphicSelected == 3 ? 'reportSelected' : '' " (click)="selectedGraphic(3)">PREDICCIÓN IA</div>
+  </div>
+
+    @if (graphicSelected == 1) {
+      <app-anualHistoric></app-anualHistoric>
+    }
+    @if (graphicSelected == 2) {
+      <app-filterByMonths></app-filterByMonths>
+    }
+    @if (graphicSelected == 3) {
+      <app-predictionAI></app-predictionAI>
+    }
+
+
+
+</section>

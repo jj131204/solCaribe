@@ -1,0 +1,16 @@
+.reportSelected{
+    background-color: #1D2A39;
+    color: #FFFFFF;
+}
+
+.selectOptions{
+    width: 300px;
+    padding: 10px 30px;
+    background-color: #F7F7F7;
+    border: none;
+}
+
+.containergaphic{
+    width: 100%;
+    height: 400px;
+}

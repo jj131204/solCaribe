@@ -14,10 +14,10 @@
       <i class="bi bi-caret-up-fill arrow" [ngClass]="openReports ? '' : 'rotate'"></i>
     </a>
     @if (openReports) {
-      <div class="submenu" *ngIf="openReports">
+      <div class="submenu">
         <a class="submenuOption" href="reporteDepartamento">Reporte de radiación solar</a>
         <a class="submenuOption" href="">Reporte de porcentaje de radiación solar</a>
-        <a class="submenuOption" href="">Reporte historico y predicción de radiación solar</a>
+        <a class="submenuOption" href="reporteHistorico">Reporte historico y predicción de radiación solar</a>
       </div>
     }
     
