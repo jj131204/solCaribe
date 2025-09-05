@@ -1,0 +1,64 @@
+<app-layout-component></app-layout-component>
+<section class="containerSections">
+  <h1 class="title">REPORTE DE RADIACIÓN SOLAR <br> (Departamento-municipios)</h1>
+
+  <div class="filter d-flex gap-5">
+    <select name="department" id="" class="department generalShadow borderRadius">
+      <option value="1">Atlantico</option>
+      <option value="2">Atlantico</option>
+      <option value="3">Atlantico</option>
+      <option value="4">Atlantico</option>
+    </select>
+    <input type="submit" class="submitButton generalShadow borderRadius" value="Buscar..">
+  </div>
+
+  <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>MUNICIPIO</th>
+                    <th class="textOrange">MAYOR RADIACIÓN</th>
+                    <th class="textgreen">MEDIANA RADIACIÓN</th>
+                    <th class="textRed">BAJA RADIACIÓN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sincelejo</td>
+                    <td>Enero 2024<br>77.0 kWh/m2_dia</td>
+                    <td>Marzo 2024<br>50.0 kWh/m2_dia</td>
+                    <td>Diciembre 2024<br>35.0 kWh/m2_dia</td>
+                </tr>
+                <tr>
+                    <td>Corozal</td>
+                    <td>Enero 2024<br>77.0 kWh/m2_dia</td>
+                    <td>Marzo 2024<br>50.0 kWh/m2_dia</td>
+                    <td>Diciembre 2024<br>35.0 kWh/m2_dia</td>
+                </tr>
+                <tr>
+                    <td>Coveñas</td>
+                    <td>Enero 2024<br>77.0 kWh/m2_dia</td>
+                    <td>Marzo 2024<br>50.0 kWh/m2_dia</td>
+                    <td>Diciembre 2024<br>35.0 kWh/m2_dia</td>
+                </tr>
+                <tr>
+                    <td>San Onofre</td>
+                    <td>Enero 2024<br>77.0 kWh/m2_dia</td>
+                    <td>Marzo 2024<br>50.0 kWh/m2_dia</td>
+                    <td>Diciembre 2024<br>35.0 kWh/m2_dia</td>
+                </tr>
+                <tr>
+                    <td>Tolú Viejo</td>
+                    <td>Enero 2024<br>77.0 kWh/m2_dia</td>
+                    <td>Marzo 2024<br>50.0 kWh/m2_dia</td>
+                    <td>Diciembre 2024<br>35.0 kWh/m2_dia</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="d-flex gap-4 containerButtonsExport">
+      <div class="buttomExport generalShadow borderRadius">Exportar como PDF</div>
+      <div class="buttomExport generalShadow borderRadius">Exportar como XlSX</div>
+    </div>
+</section>

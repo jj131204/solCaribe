@@ -96,6 +96,15 @@ export class MapComponentComponent implements OnInit {
         });
         this.onMarkerClick(p.municipality_name, p.valor_anual_kwh);
       });
+
+       this.map.on('click', (e: any) => {
+        const lat = e.latlng.lat;
+        const lng = e.latlng.lng;
+        console.log(`Coordenadas del clic: Latitud ${lat}, Longitud ${lng}`);
+        // Aquí podrías agregar el código para copiar las coordenadas,
+        // por ejemplo, actualizando una variable o un campo de texto
+        // en tu componente de Angular.
+      });
     });
   }
 

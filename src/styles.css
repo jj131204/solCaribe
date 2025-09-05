@@ -42,15 +42,15 @@ p{
 }
 
 .textOrange{
-    color: #F39200;
+    color: #F39200 !important;
 }
 
 .textgreen{
-    color: #9CCC65;
+    color: #9CCC65 !important;
 }
 
 .textRed{
-    color: #F74F52;
+    color: #F74F52 !important;
 }
 
 .containerSections{

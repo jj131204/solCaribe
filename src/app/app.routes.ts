@@ -3,7 +3,7 @@ import { HomeComponent } from './templates/home/home.component';
 import { IntroductionComponent } from './templates/introduction/introduction.component';
 import { ProblematicComponent } from './templates/problematic/problematic.component';
 import { TeamComponent } from './templates/team/team.component';
-import { ReportsComponent } from './templates/reports/reports.component';
+import { SolarRadiationReportComponent } from './templates/reports/solarRadiationReport/solarRadiationReport.component';
 
 export const routes: Routes = [
     {
@@ -16,7 +16,7 @@ export const routes: Routes = [
         path: 'problematica', component : ProblematicComponent
     },
     {
-        path: 'reporte', component : ReportsComponent
+        path: 'reporteDepartamento', component : SolarRadiationReportComponent
     },
     {
         path: 'equipo', component : TeamComponent
