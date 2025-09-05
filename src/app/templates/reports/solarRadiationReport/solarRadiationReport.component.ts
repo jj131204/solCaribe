@@ -18,7 +18,7 @@ import { saveAs } from 'file-saver';
 export class SolarRadiationReportComponent implements OnInit {
   departments: any;
   selectedDepartment: String = "";
-
+  yearSelected: String = "2023";
   municipalities: any;
 
   constructor(private apiService: ApiService, private http: HttpClient){}
@@ -43,7 +43,7 @@ export class SolarRadiationReportComponent implements OnInit {
 
   sendDepartment(){
     if(this.selectedDepartment != ''){
-      this.apiService.getApi(`departments/${this.selectedDepartment}`)
+      this.apiService.getApi(`departments/${this.selectedDepartment}?year=${this.yearSelected}`)
         .subscribe({
           next: (res) => {
             console.log('Respuesta:', res);

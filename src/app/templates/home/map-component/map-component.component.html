@@ -1,14 +1,14 @@
 <h1 class="titleMap fontInter">MAPA DE RADIACIÓN SOLAR</h1>
-<!-- <div class="formfilter d-flex gap-4 flex-wrap mb-4">
-  <select class="selectFilter generalShadow borderRadius" name="year" id="">
+<div class="formfilter d-flex gap-4 flex-wrap mb-4">
+  <select class="selectFilter generalShadow borderRadius" name="year" [(ngModel)]="yearSelected" >
     <option selected value="2023">2023</option>
     <option  value="2022">2022</option>
     <option  value="2021">2021</option>
     <option  value="2020">2020</option>
     <option  value="2019">2019</option>
   </select>
-  <div class="send p-2  generalShadow borderRadius">Enviar</div>
-</div> -->
+  <div class="send p-2  generalShadow borderRadius" (click)="getData()">Enviar</div>
+</div>
 <div class="containerMap d-flex gap-5 align-items-center">
   <div class="contentMap">
     <div class="map-container">

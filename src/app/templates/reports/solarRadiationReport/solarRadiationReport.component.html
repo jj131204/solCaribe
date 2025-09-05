@@ -3,6 +3,13 @@
   <h1 class="title">REPORTE DE RADIACIÓN SOLAR <br> (Departamento-municipios)</h1>
 
   <div class="filter d-flex gap-5">
+    <select class="selectFilter generalShadow borderRadius" name="year" [(ngModel)]="yearSelected" >
+        <option selected value="2023">2023</option>
+        <option  value="2022">2022</option>
+        <option  value="2021">2021</option>
+        <option  value="2020">2020</option>
+        <option  value="2019">2019</option>
+    </select>
     <select name="department" id="" class="selectFilter generalShadow borderRadius" [(ngModel)]="selectedDepartment">
         <option disabled selected value="">Selección un departamento</option>
          <option *ngFor="let department of departments" [value]="department">{{ department }}</option>
@@ -44,9 +51,9 @@
                  @if (municipalities != null) {
                     <tr *ngFor="let municipility of municipalities.municipalities">
                         <td>{{municipility.municipio}}</td>
-                        <td>{{municipility.max.month}} 2024<br>{{municipility.max.value_kwh}} kWh/m2_dia</td>
-                        <td>{{municipility.mean.month}} 2024<br>{{municipility.mean.value_kwh}} kWh/m2_dia</td>
-                        <td>{{municipility.min.month}} 2024<br>{{municipility.min.value_kwh}} kWh/m2_dia</td>
+                        <td>{{municipility.max.month}} {{municipalities.year}}<br>{{municipility.max.value_kwh}} kWh/m2_dia</td>
+                        <td>{{municipility.mean.month}} {{municipalities.year}}<br>{{municipility.mean.value_kwh}} kWh/m2_dia</td>
+                        <td>{{municipility.min.month}} {{municipalities.year}}<br>{{municipility.min.value_kwh}} kWh/m2_dia</td>
                     </tr>
                 }
             </tbody>
