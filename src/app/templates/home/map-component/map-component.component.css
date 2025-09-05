@@ -1,0 +1,76 @@
+.contentMap{
+    width: 70%;
+}
+
+.titleMap{
+    color: #000000;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.map-container {
+    width: 100%;
+    height: calc(70vh - 65px);
+    min-height: 300px
+}
+
+.map-frame {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.leaflet-marker-icon.custom-icon {
+  filter: drop-shadow(0 0 3px white) drop-shadow(0 0 6px black);
+}
+
+.cardMap{
+    background-color: #FFFFFF;
+    text-align: center;
+    width: 30%;
+}
+
+.titleCardMap{
+    font-weight: bold;
+    font-size: 20px;   
+}
+
+.textSelected{
+    color: #707070;
+}
+
+.citySelected{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.textBold{
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+@media (max-width: 1100px) {
+    .contentMap{
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .containerMap{
+        flex-direction: column;
+    }
+
+    .cardMap{
+        width: 100%;
+    }
+}

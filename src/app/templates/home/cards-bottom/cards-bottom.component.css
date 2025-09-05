@@ -1,0 +1,35 @@
+.containerCards{
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+.cardInfo{
+    background-color: #FFFFFF;
+    width: 30%;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+.titleCard{
+    font-weight: bold;
+    color: #000;
+    font-size: 17px;
+}
+
+
+
+.textCard{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.textCardBottom{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media (max-width: 500px) {
+    .cardInfo{
+        width: 100%;
+    }
+}

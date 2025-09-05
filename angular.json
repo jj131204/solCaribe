@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "reto5": {
+    "solCaribe": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -19,13 +19,23 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              "src/assets",
+              "src/favicon.ico",
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/leaflet/dist/leaflet.css",
+              "node_modules/leaflet-routing-machine/dist/leaflet-routing-machine.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
@@ -56,10 +66,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "reto5:build:production"
+              "buildTarget": "solCaribe:build:production"
             },
             "development": {
-              "buildTarget": "reto5:build:development"
+              "buildTarget": "solCaribe:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "fd77d3cc-83c0-4086-b9c4-8840e23f8acb"
   }
 }

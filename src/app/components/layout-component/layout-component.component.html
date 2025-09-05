@@ -1,0 +1,13 @@
+<header class="generalShadow">
+  <i class="bi bi-list iconMenu" (click)="openMenu()"></i>
+  <img src="assets/logo.png" alt="">
+  <div class="visibleMovil"></div>
+</header>
+<div class="marginHeader"></div>
+<div class="layout" [ngClass]=" open ? 'layoutMobile' : 'visibilityHidden'">
+    <a href="/">Inicio</a>
+    <a href="introducción">Introducción</a>
+    <a href="problematica">Problematica</a>
+    <a href="reporte">Reporte por departamentos</a>
+    <a href="equipo">Equipo de desarrollo</a>
+</div>

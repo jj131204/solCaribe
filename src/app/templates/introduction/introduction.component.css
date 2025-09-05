@@ -1,0 +1,24 @@
+.cardIntroduction{
+    width: 50%;
+    max-width: 600px;
+    background-color: #FFFFFF;
+}
+
+.subcard{
+    background-color: #F7F7F7;
+}
+
+.titleSubcard{
+    font-weight: bold;
+}
+
+@media (max-width: 1000px) {
+    .containerSections {
+        flex-direction: column;
+    }
+    .cardIntroduction{
+        width: 100%;
+        max-width: 100%;
+    }
+}
+

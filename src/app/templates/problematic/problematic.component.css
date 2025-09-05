@@ -1,0 +1,21 @@
+.cardIntroduction{
+    width: 70%;
+    max-width:1000px;
+    background-color: #FFFFFF;
+    margin: auto;
+}
+
+.subcard{
+    background-color: #F7F7F7;
+}
+
+.titleSubcard{
+    font-weight: bold;
+}
+
+@media (max-width: 1000px) {
+    .cardIntroduction{
+        width: 100%;
+        max-width: 800px;
+    }
+}
