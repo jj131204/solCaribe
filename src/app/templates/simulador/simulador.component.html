@@ -1,4 +1,24 @@
 <app-layout-component></app-layout-component>
 <section class="containerSections">
-  
+    <h1>SIMULADOR DE PRODUCCIÓN SOLAR</h1>
+
+    <span class="subtitleMap">Indique el lugar en el mapa</span>
+    <div class="contentMap">
+        <div class="map-container">
+        <div class="map-frame">
+            <div id="map" class="generalShadow borderRadius"></div>
+        </div>
+        </div>
+    </div>
+    <br><br>
+    <span class="subtitleMap">Ubicación seleccionada</span>
+    <br><br>
+    <div class="containerForm d-flex justify-content-start align-items-center gap-4">
+        <div class="cardDark borderRadius generalShadow">
+            <p>Latitud: {{selectedLat}}</p>
+            <p>Longitud: {{selectedLng}}</p>
+        </div>
+        <input type="text" class="generalShadow borderRadius  selectFilter" name="cuantity" placeholder="¿Cuanta energia desea producir en kWh / día?" id="">
+        <div class="submitButton generalShadow borderRadius">Buscar</div>
+    </div>
 </section>
