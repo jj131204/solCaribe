@@ -1,0 +1,16 @@
+.selectFilter{
+    width: 300px;
+    padding: 10px 30px;
+    background-color: #F7F7F7;
+    border: none;
+}
+
+.submitButton{
+    padding: 10px 30px;
+    background-color: #F7F7F7;
+    border: none;
+}
+
+.submitButton:hover{
+    background-color: #F8F8F8;
+}

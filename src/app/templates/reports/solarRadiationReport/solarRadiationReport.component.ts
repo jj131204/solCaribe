@@ -21,11 +21,12 @@ export class SolarRadiationReportComponent implements OnInit {
 
   municipalities: any;
 
+  constructor(private apiService: ApiService, private http: HttpClient){}
+
   ngOnInit(): void {
     this.getData();
   }
 
-  constructor(private apiService: ApiService, private http: HttpClient){}
 
   getData(): void {
     this.apiService.getApi('departments')

@@ -18,3 +18,7 @@
 .submitButton{
     cursor: pointer;
 }
+
+.widthYear{
+    width: 150px;
+}

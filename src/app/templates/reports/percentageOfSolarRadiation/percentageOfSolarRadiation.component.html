@@ -1,4 +1,13 @@
 <app-layout-component></app-layout-component>
 <section class="containerSections">
-  
+  <h1 class="title">REPORTE DE RADIACIÓN SOLAR <br> (Departamento-municipios)</h1>
+
+  <div class="filter d-flex gap-5">
+    <select name="department" id="" class="selectFilter generalShadow borderRadius" [(ngModel)]="selectedDepartment">
+        <option disabled selected value="">Selección un departamento</option>
+         <option *ngFor="let department of departments" [value]="department">{{ department }}</option>
+    </select>
+    <div type="submit" class="submitButton generalShadow borderRadius" (click)="sendDepartment()">Buscar</div>
+  </div>
+
 </section>
