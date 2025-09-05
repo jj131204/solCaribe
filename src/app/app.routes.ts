@@ -6,6 +6,7 @@ import { TeamComponent } from './templates/team/team.component';
 import { SolarRadiationReportComponent } from './templates/reports/solarRadiationReport/solarRadiationReport.component';
 import { HistoricalReportAndPredictionOfSolarRadiationComponent } from './templates/reports/historicalReportAndPredictionOfSolarRadiation/historicalReportAndPredictionOfSolarRadiation.component';
 import { SimuladorComponent } from './templates/simulador/simulador.component';
+import { PercentageOfSolarRadiationComponent } from './templates/reports/percentageOfSolarRadiation/percentageOfSolarRadiation.component';
 
 export const routes: Routes = [
     {
@@ -19,6 +20,9 @@ export const routes: Routes = [
     },
     {
         path: 'reporteDepartamento', component : SolarRadiationReportComponent
+    },
+    {
+        path: 'reporteCircular', component : PercentageOfSolarRadiationComponent
     },
     {
         path: 'reporteHistorico', component : HistoricalReportAndPredictionOfSolarRadiationComponent
